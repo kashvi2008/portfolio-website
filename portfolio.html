@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KASHVI CHANDA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #1b1f24;
+            color: white;
+            font-family: "Poppins", sans-serif;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: black;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .left {
+            font-size: 30px;
+            font-weight: bold;
+            color: rgb(155, 204, 244);
+        }
+        nav ul {
+            list-style: none;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+        nav ul li a {
+            color: #385f75;
+            font-size: 18px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            color: #52a8fe;
+            text-shadow: 0 0 12px rgba(82, 168, 254, 1);
+        }
+        .first {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            min-height: 90vh;
+            padding: 40px 8%;
+            gap: 40px;
+        }
+        .leftsection {
+            width: 50%;
+        }
+        .leftsection h1 {
+            font-size: 4rem;
+            line-height: 1.2;
+        }
+        .leftsection span {
+            color: #005bca;
+        }
+        .description {
+            margin-top: 20px;
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+        #element {
+            color: #e28ce6;
+            font-size: 1.8rem;
+        }
+        .rightsection {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+        }
+        .rightsection img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 50%;
+            box-shadow: 0 0 25px #52a8fe;
+            transition: 0.4s ease;
+        }
+        .rightsection img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 70px #52a8fe;
+        }
+        .social {
+            margin-top: 30px;
+            display: flex;
+            gap: 14px;
+        }
+        .social a {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            backdrop-filter: blur(8px);
+            transition: 0.25s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        .social a:hover {
+            transform: translateY(-4px) scale(1.05);
+            background: rgba(82, 168, 254, 0.2);
+            border-color: #52a8fe;
+            box-shadow: 0 0 25px #52a8fe;
+        }
+        .social a img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+        }
+        .about {
+            padding: 80px 8%;
+        }
+        .about h2 {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #9bccf4;
+        }
+        .about p {
+            font-size: 1.1rem;
+            line-height: 2;
+            text-align: center;
+            color: #d8d8d8;
+            max-width: 900px;
+            margin: auto;
+        }
+        .Education {
+            padding-top: 100px;
+        }
+        .Education h3.title {
+            text-align: center;
+            font-size: 4rem;
+            margin-bottom: 80px;
+            color: white;
+        }
+        .timeline-items {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .timeline-items::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            background: #52a8fe;
+            left: calc(50% - 1px);
+            box-shadow: 0 0 20px #52a8fe;
+        }
+        .timeline-item {
+            width: 100%;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .timeline-item:nth-child(odd) {
+            padding-right: calc(50% + 40px);
+            text-align: right;
+        }
+        .timeline-item:nth-child(even) {
+            padding-left: calc(50% + 40px);
+        }
+        .timeline-dot {
+            height: 22px;
+            width: 22px;
+            background: #52a8fe;
+            position: absolute;
+            left: calc(50% - 10px);
+            border-radius: 50%;
+            top: 10px;
+            box-shadow: 0 0 20px #52a8fe;
+        }
+        .timeline-date {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .timeline-content {
+            background: #11151c;
+            border: 3px solid #52a8fe;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 0 25px rgba(82, 168, 254, 0.5);
+            transition: 0.3s ease;
+        }
+        .timeline-content:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 40px rgba(82, 168, 254, 0.9);
+        }
+        .timeline-content h3 {
+            color: #52a8fe;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        .timeline-content p {
+            color: #d8d8d8;
+            line-height: 1.8;
+        }
+        @media(max-width:900px) {
+            .first {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .leftsection {
+                width: 100%;
+            }
+            .rightsection {
+                width: 100%;
+            }
+            .leftsection h1 {
+                font-size: 3rem;
+            }
+            .social {
+                justify-content: center;
+            }
+            .timeline-items::before {
+                left: 7px;
+            }
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 40px;
+                padding-right: 0;
+                text-align: left;
+            }
+            .timeline-dot {
+                left: -2px;
+            }
+            .about h2,
+            .Education h3.title {
+                font-size: 3rem;
+            }
+
+        }
+         .projects {
+            padding: 100px 8%;
+        }
+        .projects h2 {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 70px;
+            color: #9bccf4;
+        }
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+        .project-card {
+            background: rgba(17, 21, 28, 0.95);
+            border: 1px solid rgba(82, 168, 254, 0.25);
+            border-radius: 28px;
+            padding: 35px;
+            transition: 0.35s ease;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.35);
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: #52a8fe;
+            box-shadow: 0 0 40px rgba(82, 168, 254, 0.5);
+        }
+        .project-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .project-card h3 {
+            font-size: 1.8rem;
+            color: #52a8fe;
+            margin-bottom: 18px;
+        }
+        .project-card p {
+            color: #d8d8d8;
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+        .tech {
+            color: #f1adf4;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+        .project-links a {
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 12px;
+            background: #52a8fe;
+            color: white;
+            transition: 0.3s;
+        }
+        .project-links a:hover {
+            background: #2f7fd3;
+            transform: scale(1.05);
+        }
+        @media(max-width:900px){
+        .projects h2{
+            font-size:3rem;
+        }
+        .project-container{
+            grid-template-columns:1fr;
+        }
+        .project-card{
+            padding:25px;
+        }
+    }
+            .skills {
+                padding: 100px 8%;
+            }
+            .skills h2 {
+                font-size: 4rem;
+                text-align: center;
+                margin-bottom: 70px;
+                color: #9bccf4;
+            }
+            .skills-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 25px;
+                max-width: 800px;
+                margin: auto;
+            }
+            .skill-card {
+                background: rgba(17, 21, 28, 0.95);
+                border: 1px solid rgba(82, 168, 254, 0.25);
+                border-radius: 28px;
+                padding: 20px;
+                text-align: center;
+                transition: 0.35s ease;
+            }
+            .skill-card:hover {
+                transform: translateY(-5px);
+                border-color: #52a8fe;
+            }
+             .skill-card {
+                color: #52a8fe;
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+            @media(max-width:900px) {
+            .skills h2 {
+                font-size: 3rem;
+            }
+            .skill-card {
+                width: 100%;
+                text-align: center;
+            }
+        }
+         .contact {
+                padding: 100px 8%;
+            }
+            .contact h2 {
+                font-size: 4rem;
+                text-align: center;
+                margin-bottom: 70px;
+                color: #9bccf4;
+            }
+            .contact form {
+                max-width: 800px;
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+            }
+            .contact input,
+            .contact textarea {
+                width: 100%;
+                padding: 20px;
+                background: rgba(17, 21, 28, 0.95);
+                border: 2px solid rgba(82, 168, 254, 0.25);
+                border-radius: 18px;
+                color: white;
+                font-size: 1rem;
+                outline: none;
+                transition: 0.3s ease;
+            }
+            .contact input:focus,
+            .contact textarea:focus {
+                border-color: #52a8fe;
+                box-shadow: 0 0 20px rgba(82, 168, 254, 0.4);
+            }
+            .contact textarea {
+                resize: none;
+            }
+            .contact button {
+                padding: 18px;
+                border: none;
+                border-radius: 18px;
+                background: #52a8fe;
+                color: white;
+                font-size: 1.1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: 0.3s ease;
+            }
+            .contact button:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 0 25px rgba(82, 168, 254, 0.6);
+            }
+            @media(max-width:900px){
+
+                .contact h2{
+                    font-size:3rem;
+                }
+
+            }
+            .footer{
+                text-align: center;
+                padding: 30px 0;
+                background: #11151c;
+                color: #52a8fe;
+                font-size: 0.9rem;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">
+                Kashvi Chanda
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="first" id="home">
+            <div class="leftsection">
+                <h1>
+                    Hi, I'm <span>KASHVI CHANDA</span>!
+                </h1>
+                <div class="description">
+                    I'm passionate about
+                    <span id="element"></span>
+                </div>
+                <div class="social">
+                    <a href="https://github.com/kashvi2008" target="_blank">
+                        <img src="git.png" alt="GitHub">
+                    </a>
+                    <a href="https://www.linkedin.com/in/kashvi-chanda-735389329/" target="_blank">
+                        <img src="linkedin.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://www.instagram.com/ft.kashvii/" target="_blank">
+                        <img src="insta.png" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+            <div class="rightsection">
+                <img src="bg.jpg" alt="Portfolio Image">
+            </div>
+        </section>
+        <section class="about" id="about">
+            <hr style="margin-bottom:50px;border:1px solid #2e3947;">
+            <h2>About Me</h2>
+            <p>
+                I'm a <span style="color:#e28ce6;">Computer Science student</span>
+                with a strong passion for
+                <span style="color:#e28ce6;">Tech, R&D and Innovation.</span>
+                I enjoy building new technologies while constantly learning and
+                experimenting with modern tools and frameworks.
+                I love turning ideas into real-world projects.
+            </p>
+            <div class="Education">
+                <h3 class="title">Education</h3>
+                <div class="timeline-items">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-date">
+                            2024 - Present
+                        </div>
+                        <div class="timeline-content">
+                            <h3>KALINGA INSTITUTE OF INDUSTRIAL TECHNOLOGY</h3>
+                            <p>Bachelor of Technology in Computer Science</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">
+                            2022 - 2024
+                        </div>
+                        <div class="timeline-content">
+                            <h3>LKSEC</h3>
+                            <p>Senior Secondary Education</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">
+                            2010 - 2022
+                        </div>
+                        <div class="timeline-content">
+                            <h3>ABPS</h3>
+                            <p>Secondary Education</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="projects" id="projects">
+              <hr style="margin-bottom:50px;border:1px solid #2e3947;">
+            <h2>Projects</h2>
+            <div class="project-container">
+                <div class="project-card">
+                    <div class="project-icon">🔐</div>
+                    <h3>Password Strength Checker</h3>
+                    <p>
+                        A Python-based application that checks password
+                        security and provides suggestions for stronger passwords.
+                    </p>
+                    <div class="tech">
+                        <span style="color:#2cbefd;"> Python • Tkinter</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">💻</div>
+                    <h3>Personal Portfolio Website</h3>
+                    <p>
+                        A modern responsive portfolio website with smooth
+                        animations and interactive UI.
+                    </p>
+                    <div class="tech">
+                        <span style="color:#2cbefd;"> HTML • CSS • JavaScript</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🎵</div>
+                    <h3>Spotify Clone</h3>
+                    <p>
+                        A Spotify-inspired music streaming website with
+                        playlists and responsive design.
+                    </p>
+                    <div class="tech">
+                        <span style="color:#2cbefd;"> HTML • CSS • JavaScript</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🎮</div>
+                    <h3>Rock Paper Scissors GUI</h3>
+                    <p>
+                        An interactive GUI game with score tracking and
+                        animations.
+                    </p>
+                    <div class="tech">
+                        <span style="color:#2cbefd;"> Python • Tkinter</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🤖</div>
+                    <h3>Voice Assistant</h3>
+                    <p>
+                        A Python voice assistant capable of opening apps,
+                        searching the web, and responding to commands.
+                    </p>
+                    <div class="tech">
+                        <span style="color:#2cbefd;"> Python • SpeechRecognition • pyttsx3</span>   
+                    </div>
+            </div>
+        </section>
+        <section class="skills" id="skills">
+            <hr style="margin-bottom:50px;border:1px solid #2e3947;">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">Python</div>
+                <div class="skill-card">Java</div>
+                <div class="skill-card">HTML</div>
+                <div class="skill-card">CSS</div>
+                <div class="skill-card">JavaScript</div>
+                <div class="skill-card">SQL</div>
+                <div class="skill-card">C</div>
+            </div>
+        </section>
+        <section class="contact" id="contact">
+            <hr style="margin-bottom:50px;border:1px solid #2e3947;">
+            <h2>Contact Me</h2>
+    <form action="https://formsubmit.co/kashvichansa20@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Enter Your Name" required>
+        <input type="email" name="email" placeholder="Enter Your Email" required>
+        <textarea name="message" rows="8" placeholder="Enter Your Message" required></textarea>
+            <button type="submit">
+            Send Message
+            </button>
+        </form>
+        </section>
+    <footer class="footer">
+            © 2026 Kashvi Chanda | All Rights Reserved
+    </footer>
+
+    </main>
+    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: [
+                'Web Development',
+                'Cybersecurity',
+                'AI and Machine Learning'
+            ],
+            typeSpeed: 75,
+            backSpeed: 40,
+            loop: true
+        })
+    </script>
+</body>
+</html>
